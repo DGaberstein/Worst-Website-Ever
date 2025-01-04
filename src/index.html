@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worst Website Ever</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        .hidden-button {
+            color: inherit;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .live-chat {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 300px;
+            height: 400px;
+            background-color: white;
+            border: 1px solid black;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .live-chat-header {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .live-chat-body {
+            flex-grow: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+        .live-chat-footer {
+            padding: 10px;
+        }
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger-menu div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 4px 0;
+        }
+        .carousel {
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel img {
+            width: 100%;
+            animation: slide 10s infinite;
+        }
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="hamburger-menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <h1>Welcome to the Worst Website Ever!</h1>
+    <p style="text-align: justify;">This website is designed to be as annoying as possible.</p>
+    <marquee behavior="scroll" direction="left">Scrolling text is very annoying!</marquee>
+    <marquee behavior="scroll" direction="right">More scrolling text!</marquee>
+    <marquee behavior="scroll" direction="up">Even more scrolling text!</marquee>
+    <marquee behavior="scroll" direction="down">Scrolling text from bottom!</marquee>
+    <p><button class="hidden-button" onclick="alert('You clicked a hidden button!')">Click me!</button></p>
+    <audio autoplay loop>
+        <source src="audio/annoying-sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio autoplay loop>
+        <source src="audio/more-annoying-sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio autoplay loop>
+        <source src="audio/another-annoying-sound.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <video autoplay loop muted>
+        <source src="video/annoying-video.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video>
+    <div class="carousel">
+        <img src="images/slide1.jpg" alt="Slide 1">
+        <img src="images/slide2.jpg" alt="Slide 2">
+        <img src="images/slide3.jpg" alt="Slide 3">
+        <img src="images/slide4.jpg" alt="Slide 4">
+    </div>
+    <form action="/submit" method="post">
+        <h2>Checkout</h2>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br>
+        <label for="address">Address:</label>
+        <input type="text" id="address" name="address" required><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+        <label for="credit-card">Credit Card:</label>
+        <input type="text" id="credit-card" name="credit-card" required><br>
+        <label for="expiration">Expiration Date:</label>
+        <input type="text" id="expiration" name="expiration" required><br>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required><br>
+        <button type="submit">Submit</button>
+    </form>
+    <div class="live-chat">
+        <div class="live-chat-header">Live Chat</div>
+        <div class="live-chat-body">
+            <p>How can we annoy you today?</p>
+        </div>
+        <div class="live-chat-footer">
+            <input type="text" placeholder="Type a message...">
+            <button>Send</button>
+        </div>
+    </div>
+    <script>
+        // Multiple pop-up alerts
+        setInterval(function() {
+            alert('This is an annoying pop-up!');
+            alert('Another annoying pop-up!');
+        }, 25000); // Every 25 seconds
+
+        // Random background color change
+        setInterval(function() {
+            document.body.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+        }, 1000); // Every 1 second
+
+        // Cursor trail effect
+        document.addEventListener('mousemove', function(e) {
+            var trail = document.createElement('div');
+            trail.style.position = 'absolute';
+            trail.style.width = '10px';
+            trail.style.height = '10px';
+            trail.style.backgroundColor = 'red';
+            trail.style.borderRadius = '50%';
+            trail.style.left = e.pageX + 'px';
+            trail.style.top = e.pageY + 'px';
+            document.body.appendChild(trail);
+            setTimeout(function() {
+                trail.remove();
+            }, 1000); // Remove after 1 second
+        });
+
+        // Vibrating effect
+        setInterval(function() {
+            document.body.style.transform = 'translate(' + (Math.random() * 10 - 5) + 'px, ' + (Math.random() * 10 - 5) + 'px)';
+        }, 100); // Every 0.1 second
+
+        // Slow website loading
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.body.style.display = 'block';
+            }, 5000); // 1000 is 1 second
+        });
+    </script>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
